@@ -1,0 +1,65 @@
+.searchContainer {
+    width: 90%;
+    margin: 0.8rem; /* Center the search bar */
+    padding: 10px;
+}
+
+.searchBar {
+    width: 90%;
+    padding: 10px;
+    border:none;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.searchBar::placeholder {
+    color: #999;
+    font-size: 16px;
+}
+
+.notesContainer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex;
+    gap: 10px;
+    padding: 20px;
+    flex-grow: 1; /* This will push .write to the bottom */
+    overflow-y: auto; /* Ensures scrolling for notes */
+}
+.pic{
+    position: absolute;
+    left: 10px;
+    top: 3vh;
+}
+.write{
+    position: relative;
+    top: 30vh;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.text{
+    height: 5vh;
+    width: 60vw;
+    padding: 10px;
+    border:none;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.record{
+    position: absolute;
+    right: 12vw;
+    bottom: 1.6vh;
+    padding: 1.5vh;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(230, 64, 64);
+    color: white;
+}
