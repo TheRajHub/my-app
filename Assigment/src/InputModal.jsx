@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import styles from './InputModal.module.css';
+import UserDataContext from './Context/UserDataContext';
 
 const InputModal = ({ isOpen, setIsOpen, user}) => {
   const [title, setTitle] = useState('');
@@ -9,7 +10,7 @@ const InputModal = ({ isOpen, setIsOpen, user}) => {
   const [audioURL, setAudioURL] = useState("");
   const [mediaRecorder, setMediaRecorder] = useState(null);
   const [audioChunks, setAudioChunks] = useState([]);
-
+  const { setData } = useContext(UserDataContext);
   const startRecording = async () => {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     const recorder = new MediaRecorder(stream);
@@ -39,7 +40,12 @@ const InputModal = ({ isOpen, setIsOpen, user}) => {
         body:JSON.stringify({title,date,content,user})
       })
       d=await d.json()
+      setData(d)
+
     }catch(err){alert(err)}
+    setTitle('');
+    setDate('');
+    setContent('');
     setIsOpen(false);
   };
 

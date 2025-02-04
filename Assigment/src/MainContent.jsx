@@ -15,7 +15,7 @@ function MainContent() {
     function onDelete() {}
     function onRename() {}
 
-    return (
+    return ( 
         <>
             <div className={styles.searchContainer}>
                 <input type="text" placeholder=" Search..." className={styles.searchBar} />
